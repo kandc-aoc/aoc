@@ -21,9 +21,14 @@ def find_last(s):
         j = j -1
     return x
 
+GrandTotal = 0
+first_digit=0
+last_digit=0
+
 
 with open('example_input.txt') as test:
     for line in test:
-        print(find_first(line))
-        print(find_last(line))
+        first_digit=find_first(line)
+        last_digit=find_last(line))
+        
     
