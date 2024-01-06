@@ -1,4 +1,7 @@
 
+#Starts looking at the start of the
+#provided string and finds and returns
+#the first digit
 def find_first(s):
     #print ('input:' + s)
     j=0
@@ -9,7 +12,10 @@ def find_first(s):
         #print ("x updated to s[j] " + x)
         j = j + 1
     return x
-    
+
+#Starts looking at the end of the
+#provided string and finds and returns
+#the first digit
 def find_last(s):
     #print ('input:' + s)
     j=len(s)-1
@@ -24,6 +30,12 @@ def find_last(s):
 GrandTotal = 0
 first_digit=0
 last_digit=0
+
+=======
+#Iterates over the input file and for each
+#line (containing a string) call the find_first
+#and find_lass functions, combine their return
+#values and add them to running total
 
 
 with open('example_input.txt') as test:
