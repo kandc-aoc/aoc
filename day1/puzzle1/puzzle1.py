@@ -27,20 +27,20 @@ def find_last(s):
         j = j -1
     return x
 
-GrandTotal = 0
-first_digit=0
-last_digit=0
+grand_total = 0
 
-=======
+
 #Iterates over the input file and for each
 #line (containing a string) call the find_first
 #and find_lass functions, combine their return
 #values and add them to running total
 
 
-with open('example_input.txt') as test:
+with open('puzzle_input.txt') as test:
     for line in test:
-        first_digit=find_first(line)
-        last_digit=find_last(line))
+        #print(find_first(line)+find_last(line))
+        grand_total=grand_total+int((find_first(line)+find_last(line)))
         
-    
+        
+        
+print(grand_total)    
