@@ -36,7 +36,7 @@ grand_total = 0
 #values and add them to running total
 
 
-with open('puzzle_input.txt') as test:
+with open('puzzle_input_2.txt') as test:
     for line in test:
         #print(find_first(line)+find_last(line))
         grand_total=grand_total+int((find_first(line)+find_last(line)))
