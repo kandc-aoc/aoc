@@ -7,6 +7,8 @@
 
 import re
 
+#line_count=0
+
 grand_total=0
 
 dict  = {'one': '1', 'two': '2', 'three': '3', 'four' : '4', 'five' : '5',
@@ -20,7 +22,7 @@ def find_words(s):
     lastnum='a'
     #print(firstnum)
     r = re.findall('one|two|three|four|five|six|seven|eight|nine|\d', s)
-    #print(r)
+    print(r)
     firstnum=r[0]
     lastnum=r[-1]
     return firstnum, lastnum
@@ -32,6 +34,7 @@ def combine_to_int(firstnum, lastnum):
 
 with open('example_input.txt') as test:
     for line in test:
+        #line_count=line_count+1
         firstnum,lastnum=find_words(line)
         result=combine_to_int(firstnum,lastnum)
         #print("first "+firstnum+" last "+lastnum)
