@@ -6,6 +6,7 @@
 #
 
 import re
+import csv
 
 grand_total=0
 
@@ -30,12 +31,23 @@ def combine_to_int(firstnum, lastnum):
     l = dict[lastnum]
     return int (f + l)
 
-with open('example_input.txt') as test:
+count=0
+resdict={}
+
+with open('puzzle_input.txt') as test:
     for line in test:
+        count = count+1
         firstnum,lastnum=find_words(line)
         result=combine_to_int(firstnum,lastnum)
         #print("first "+firstnum+" last "+lastnum)
+        resdict[line.strip()]=result
         grand_total=grand_total+result
+    print (grand_total)
+    print(count)
+
+with open('res.csv','w') as f:
+    w = csv.writer(f)
+    w.writerows(resdict.items())
 
 
 
