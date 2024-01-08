@@ -9,17 +9,19 @@ import re
 
 def find_words(s):
     #print ('input:' + s)
-    first='a'
-    last='a'
+    firstnum='a'
+    lastnum='a'
+    #print(firstnum)
     r = re.findall('one|two|three|four|five|six|seven|eight|nine|\d', s)
-    first=r[0]
-    last=r[-1]
-    return first, last
+    #print(r)
+    firstnum=r[0]
+    lastnum=r[-1]
+    return firstnum, lastnum
 
 with open('example_input.txt') as test:
     for line in test:
-        find_words(line)
-        print("first "+first+" last "+last)
+        firstnum,lastnum=find_words(line)
+        #print("first "+firstnum+" last "+lastnum)
        # grand_total=grand_total+int((find_first(line)+find_last(line)))
 
 
