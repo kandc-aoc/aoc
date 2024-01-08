@@ -5,7 +5,7 @@
 # and the last can be retrieved by referencing r[-1]
 #
 
-import re
+import regex as re
 import csv
 
 grand_total=0
@@ -17,10 +17,8 @@ dict  = {'one': '1', 'two': '2', 'three': '3', 'four' : '4', 'five' : '5',
 
 def find_words(s):
     #print ('input:' + s)
-    firstnum='a'
-    lastnum='a'
     #print(firstnum)
-    r = re.findall('one|two|three|four|five|six|seven|eight|nine|\d', s)
+    r = re.findall('one|two|three|four|five|six|seven|eight|nine|\d', s, overlapped=True)
     #print(r)
     firstnum=r[0]
     lastnum=r[-1]
@@ -31,23 +29,7 @@ def combine_to_int(firstnum, lastnum):
     l = dict[lastnum]
     return int (f + l)
 
-count=0
-resdict={}
 
-with open('puzzle_input.txt') as test:
-    for line in test:
-        count = count+1
-        firstnum,lastnum=find_words(line)
-        result=combine_to_int(firstnum,lastnum)
-        #print("first "+firstnum+" last "+lastnum)
-        resdict[line.strip()]=result
-        grand_total=grand_total+result
-    print (grand_total)
-    print(count)
-
-with open('res.csv','w') as f:
-    w = csv.writer(f)
-    w.writerows(resdict.items())
 
 
 
