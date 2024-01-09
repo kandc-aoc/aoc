@@ -1,10 +1,7 @@
 import regex as re
 
-with open('example_input.txt') as test:
-    for line in test:
-        breakup = [j for i in line.split(':') for j in i.split(';')]
-        print(line,breakup)
-
+grand_total=0
+game = 0
 
 s = 'Game 1: 3 blue, 4 red; 1 red, 2 green, 6 blue; 2 green'
 
@@ -21,4 +18,10 @@ def is_possible(line, color, total):
 
 print(is_possible(s, 'blue', 14))
 
+with open('example_input.txt') as test:
+    for line in test:
+        game=game+1
+        if (is_possible(line,'blue',14) & is_possible(line,'red',12) & is_possible(line,'green',13)):
+            grand_total=grand_total+game
+    print (grand_total)
 
