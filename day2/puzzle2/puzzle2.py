@@ -6,6 +6,7 @@ game = 0
 s = 'Game 1: 3 blue, 4 red; 1 red, 2 green, 6 blue; 2 green'
 
 #regex checking function
+#EDIT to output the max value for each colour cubed
 def is_possible(line, color, total):
     p = '(\d+)\s+'+color
     cp = re.compile(p)
@@ -18,6 +19,7 @@ def is_possible(line, color, total):
 
 print(is_possible(s, 'blue', 14))
 
+#edit to add grand total without skipping games
 with open('puzzle_input2.txt') as test:
     for line in test:
         game=game+1
