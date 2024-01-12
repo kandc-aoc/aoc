@@ -53,7 +53,8 @@ def collect_numbers(file):
 
 def collect_symbols(file):
     symbols = []
-    with (open(file) as input):
+    #py error Python version 3.8 does not support parenthesized context expressions
+    with open(file) as input:
         x = 0
         for line in input:
             symbol_data = []
@@ -91,7 +92,7 @@ def part_nums(number_list, symbol_list):
 
 
 
-parts = part_nums(collect_numbers('puzzle_input.txt'), collect_symbols('puzzle_input.txt'))
+parts = part_nums(collect_numbers('puzzle_input_2.txt'), collect_symbols('puzzle_input_2.txt'))
 print(reduce(lambda x, y: x+y, parts))
 
 
