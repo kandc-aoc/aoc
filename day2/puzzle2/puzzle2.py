@@ -21,7 +21,7 @@ def max_color(line,color):
 #print(max_color(s,'blue'))
 
 #edit to add grand total without skipping games
-with open('puzzle_input2.txt') as test:
+with open('puzzle_input.txt') as test:
     grand_total = 0
     for line in test:
         total = max_color(line, 'blue')*max_color(line, 'red')*max_color(line,'green')
