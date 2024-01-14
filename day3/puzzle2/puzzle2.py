@@ -1,26 +1,3 @@
-
-import regex as re
-
-# def locate_symbols(text):
-#     list_symbol=[]
-#     x =0
-#     y=0
-#     for line in text:
-#         line=line.strip()
-#         for char in line:
-#             if(re.search("[^.,\d]", char)):
-#                 print(x,y,char)
-#                 list_symbol.append([x,y,char])
-#             y=y+1
-#         y=0
-#         x=x+1
-#     return list_symbol
-#
-# with open('example_input.txt') as test:
-#     symbol_list=locate_symbols(test)
-#     print(symbol_list)
-
-
 from functools import reduce
 
 def collect_numbers(file):
@@ -92,7 +69,5 @@ def part_nums(number_list, symbol_list):
 
 
 
-parts = part_nums(collect_numbers('puzzle_input_2.txt'), collect_symbols('puzzle_input_2.txt'))
+parts = part_nums(collect_numbers('example_input.txt'), collect_symbols('example_input.txt'))
 print(reduce(lambda x, y: x+y, parts))
-
-
