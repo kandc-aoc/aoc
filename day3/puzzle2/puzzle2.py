@@ -37,8 +37,7 @@ def collect_symbols(file):
             symbol_data = []
             y = 0
             for char in line.strip():
-                if not char.isdigit():
-                    if (char != '.'):
+                if char=="*":
                         symbol_data.append(char)
                         symbol_data.append(x)
                         symbol_data.append(y)
@@ -48,8 +47,8 @@ def collect_symbols(file):
             x = x + 1
     return symbols
 
-def part_nums(number_list, symbol_list):
-    part_nums=[]
+def gear_parts(number_list, symbol_list):
+    gear_parts=[]
     for number_data in number_list:
         x_start = number_data[0]-1
         x_end = number_data[0]+2
@@ -62,12 +61,22 @@ def part_nums(number_list, symbol_list):
                     #print(x, y, symbol[1], symbol[2], number_data[2])
                     if x==symbol[1] and y==symbol[2]:
                         #print('MATCH', x, y, number_data[2])
-                        part_nums.append(int(number_data[2]))
-
-    return part_nums
-
+                        symbol.append(int(number_data[2]))
+    return symbol_list
 
 
 
-parts = part_nums(collect_numbers('example_input.txt'), collect_symbols('example_input.txt'))
-print(reduce(lambda x, y: x+y, parts))
+
+
+
+#parts = part_nums(collect_numbers('example_input.txt'), collect_symbols('example_input.txt'))
+#print(reduce(lambda x, y: x+y, parts))
+
+
+gears = gear_parts(collect_numbers('puzzle_input.txt'), collect_symbols('puzzle_input.txt'))
+total=0
+for gear in gears:
+    if len(gear)==5:
+        total = total + (gear[3]*gear[4])
+
+print(total)
