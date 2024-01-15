@@ -73,7 +73,7 @@ def gear_parts(number_list, symbol_list):
 #print(reduce(lambda x, y: x+y, parts))
 
 
-gears = gear_parts(collect_numbers('puzzle_input.txt'), collect_symbols('puzzle_input.txt'))
+gears = gear_parts(collect_numbers('puzzle_input_2.txt'), collect_symbols('puzzle_input_2.txt'))
 total=0
 for gear in gears:
     if len(gear)==5:
