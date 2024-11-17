@@ -1,8 +1,12 @@
+
+
+
+
 headings = ['seed-to-soil map:', 'soil-to-fertilizer map:',
             'fertilizer-to-water map:', 'water-to-light map:',
             'light-to-temperature map:', 'temperature-to-humidity map:',
             'humidity-to-location map:']
-
+#test comment
 def get_next_input(input, des_base, src_base, range):
     if input >= src_base and input <= src_base+range:
         return des_base + input-src_base
@@ -33,5 +37,6 @@ inp=get_next_input(inp,50,98,2)
 print(inp)
 inp=get_next_input(inp,52,50,48)
 print(inp)
+
 
 
