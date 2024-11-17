@@ -8,7 +8,6 @@ def file_len(file_name):
 
 def calculate_score(file_name):
     with open(file_name) as file:
-        line_total=[]
         repeats=[1 for i in range(file_len(file_name))]
         l=0
         for line in file:
@@ -24,7 +23,6 @@ def calculate_score(file_name):
             a=repeats[l-1]
             for i in range(l, l+points):
                 repeats[i]+=a
-            line_total.append(points)
     return repeats
 
 print(reduce(lambda x, y: x+y, calculate_score("puzzle_input.txt")))
